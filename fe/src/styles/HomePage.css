@@ -1,0 +1,155 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  color: #f9a825;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu li a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.hero-slide-item {
+  position: relative;
+  height: 650px;
+}
+
+.hero-slide-thumbnail {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide-item-content {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  color: #fff;
+}
+
+.item-content-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.movie-infos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.movie-info {
+  font-size: 16px;
+}
+
+.btn-hover {
+  background-color: #f9a825;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.btn-hover:hover {
+  background-color: #fff176;
+  border-radius: 10px;
+}
+
+.section-header {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.phucduhg {
+  color: red;
+}
+.movie-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+}
+
+.movie-card-thumbnail {
+  width: 100%;
+  height: 140px;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.movie-card-content {
+  padding: 20px;
+}
+
+.movie-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.movie-info {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}

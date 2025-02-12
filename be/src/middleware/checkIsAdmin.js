@@ -1,0 +1,16 @@
+export const checkIsAdmin = async (req, res, next) => {
+  try {
+    // Kiểm tra quyền hạn của người dùng
+    if (req.user.role !== "admin") {
+      return res.status(401).json({
+        message: "Unauthorized",
+      });
+    }
+
+    next();
+  } catch (error) {
+    return res.status(401).json({
+      message: "Unauthorized",
+    });
+  }
+};

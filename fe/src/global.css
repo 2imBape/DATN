@@ -1,0 +1,10 @@
+@layer tailwind-base, antd;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+@tailwind components;
+@tailwind utilities;
+.ant-form-item-label > label {
+    color: white !important;
+  }

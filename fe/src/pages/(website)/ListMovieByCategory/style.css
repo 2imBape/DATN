@@ -1,0 +1,137 @@
+body {
+  cursor: default;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Tự động điều chỉnh số cột */
+  gap: 16px;
+  padding: 16px;
+  user-select: none;
+  flex: 3; /* Để đảm bảo không gian cho phần phim phổ biến */
+}
+
+.cinema-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Đặt kiểu con trỏ thành pointer */
+}
+
+.cinema-item:hover .movie-image {
+  transform: scale(1.05); /* Phóng to ảnh khi hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-image {
+  position: relative; /* Để định vị logo phát phim */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px; /* Kích thước logo phát phim */
+  height: 40px; /* Kích thước logo phát phim */
+  opacity: 0; /* Ẩn logo phát phim theo mặc định */
+  transition: opacity 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.cinema-item:hover .play-icon {
+  opacity: 1; /* Hiện logo phát phim khi hover */
+}
+
+.movie-image {
+  width: 100%;
+  height: 250px; /* Có thể điều chỉnh chiều cao để phù hợp với layout */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.923), rgba(0, 0, 0, 0));
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.title {
+  margin: 0;
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Để đảm bảo có 4 hàng dọc */
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 cột cho các màn hình lớn hơn */
+  }
+}
+
+@media (max-width: 767px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho các màn hình nhỏ hơn */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: 1fr; /* 1 cột cho các màn hình nhỏ hơn */
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.current-path {
+  padding: 10px 15px; /* Khoảng cách bên trong */
+  border-radius: 5px; /* Bo góc */
+  margin-bottom: 20px; /* Khoảng cách phía dưới */
+  margin-top: 24px; /* Khoảng cách phía trên */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng nhẹ */
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px; /* Kích thước phông chữ */
+  color: #dfdbdb; /* Màu chữ */
+}
+
+.current-path p {
+  margin: 0; /* Bỏ khoảng cách mặc định */
+  font-weight: bold; /* Đậm chữ */
+  margin-top: 20px;
+}
